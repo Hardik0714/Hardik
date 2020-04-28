@@ -1,0 +1,33 @@
+Paste Below Function Into SQL Query Section of XMAPP After Database Is Created.
+
+drop PROCEDURE if exists child.`Add`;
+
+DELIMITER //
+CREATE PROCEDURE child.`Add`(IN `id` INT, IN `fname` VARCHAR(100), IN `lname` VARCHAR(100), IN `num` BIGINT, IN `res` BOOLEAN)
+BEGIN
+	INSERT INTO `enrolled_child` VALUES (id,fname,lname,num,res);
+END; //
+
+DELIMITER ;
+
+
+drop PROCEDURE if exists child.`Change`;
+
+DELIMITER //
+CREATE PROCEDURE child.`Change`(IN `id` INT,IN `res` BOOLEAN)
+BEGIN
+	UPDATE `enrolled_child` SET `STATUS`= res WHERE `id` = id ;
+END; //
+
+DELIMITER ;
+
+
+drop PROCEDURE if exists child.`Remove`;
+
+DELIMITER //
+CREATE PROCEDURE child.`Remove`(IN `id` INT	)
+BEGIN
+	DELETE FROM `enrolled_child` WHERE `id` = id;
+END; //
+
+DELIMITER ;
