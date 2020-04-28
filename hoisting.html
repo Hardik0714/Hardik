@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		//function hoisting
+		x=10;
+		document.write(x,"<br>");
+		var x;
+
+		//function hoisting
+		document.writeln(sum(10,20));
+		function sum(a,b) {
+			// body...
+			return a + b; 
+		}
+
+	</script>
+
+</body>
+</html>
