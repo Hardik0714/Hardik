@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		//javascript Abstraction
+		//hinding the implements detalis showing only the functionlity yo the user
+		/* We can not create absract class
+			It reduce the dupicate of code */
+
+			function Vehicle() {
+				// body...
+				this.vehicleName="vehicleName";
+				throw new Error("You can not create an instace of abstract class");
+			}
+			Vehicle.prototype.display = function() {
+				// body...
+				return "Vehicle is:" +this.vehicleName;
+			};
+			function Bike(vehicleName) {
+				// body...
+				this.vehicleName=vehicleName;
+			}
+			Bike.prototype = Object.create(Vehicle.prototype);
+			var bike = new Bike("Hunk");
+			document.write(bike.display());
+
+	</script>
+
+</body>
+</html>

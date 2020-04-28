@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+			function showcommentform() {
+				// body...
+				var data = "Name: <input type='text' name='name'><br>Comment:<br><textarea rows='5' cols='80'></textarea><br><input type='submit' value = 'Post Comment'>";
+				document.getElementById('mylocation').innerHTML=data;
+			}
+
+	</script>
+
+			<form>
+				
+				<input type="button" value="comment" onclick="showcommentform()">
+				<div id="mylocation"></div>
+
+			</form>
+
+</body>
+</html>

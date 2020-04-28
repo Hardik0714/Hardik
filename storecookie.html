@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	Name: <input type="text" id="name"><br>
+	Email: <input type="email" id="email"><br>
+	Course: <input type="text" id="course"><br>
+
+	<input type="button" value="Set Cookie" onclick="setCookie()">
+	<input type="button" value="Get Cookie" onclick="getCookie()">
+
+	<script type="text/javascript">
+		
+		function setCookie() {
+			// body...
+			var obj ={};
+			obj.name=document.getElementById("name").value;
+			obj.email=document.getElementById("email").value;
+			obj.course=document.getElementById("course").value;
+
+			var jsonString = JSON.stringify(obj);
+			document.cookie = jsonString;
+		}
+
+		 function getCookie()  
+				{  
+
+		if (document.cookie.length!=0) {
+			var obj = JSON.parse(document.cookie);
+
+			alert("Name="+obj.name+" "+"Email="+obj.email+" "+"Course="+obj.course);
+		}else{
+			alert("cookie not available");
+		}
+	}
+	</script>
+
+</body>
+</html>
